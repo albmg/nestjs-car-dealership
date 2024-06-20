@@ -22,12 +22,12 @@ export class CarsController {
 
 
   @Post()
-  @UsePipes( ValidationPipe )
-  createCar( @Body() createCardDto: CreateCarDto ) { 
+  //@UsePipes( ValidationPipe )
+  createCar( @Body() createCardDto: CreateCarDto ) {     
     return {
       ok: true,
       method: 'POST',
-      return: createCardDto
+      return: this.carsService.create( createCardDto )
     }
   }
 
